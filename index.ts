@@ -16,7 +16,8 @@ const binarySearch = function (item: number, arr: number[]): number | string {
 
 
 // selection sort
-const findSmallestIndex = function (arr: number[]) {
+const findSmallestIndex = function (arr: number[]):number {
+    // check the smallest number and get its index
     let smallest = arr[0];
     let smallestIndex = 0
     for (let i = 1; i < arr.length; i++) {
@@ -27,12 +28,15 @@ const findSmallestIndex = function (arr: number[]) {
     }
     return smallestIndex
 }
-let selectionSort = function (arr: number[]) {
+let selectionSort = function (arr: number[]):number[] {
     let smallest: number;
     let newArray: number[] = []
     while(arr.length>0){
+        // set the smallest dynamically
         smallest = findSmallestIndex(arr)
+        // push the smallest one by one to the new sorted array
         newArray.push(arr[smallest])
+        // remove it
         arr.splice(smallest, 1)
     }
     return newArray
